@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:forgetnot/modals/Constant.dart';
+import 'package:forgetnot/widgets/Constant.dart';
+import 'package:forgetnot/widgets/premium.dart';
 
 import 'ProfilePage.dart';
 
@@ -14,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> _pages = [
     Homepage(),
     ProfilePage(),
-  ]
+  ];
   int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -69,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Icon(Icons.add, color: klightgrey, size: 35),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      body: _pages[activeIndex],
     );
   }
 }
@@ -113,4 +115,26 @@ AppBar _buildAppBar() {
       ),
     ],
   );
+}
+
+class Homepage extends StatefulWidget {
+  const Homepage({super.key});
+
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(right: 8.0, left: 8, top: 20),
+          child: GoPremium(),
+        ),
+      ],
+    );
+  }
 }
