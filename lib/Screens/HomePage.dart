@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:forgetnot/modals/Constant.dart';
 
+import 'ProfilePage.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -9,6 +11,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<Widget> _pages = [
+    Homepage(),
+    ProfilePage(),
+  ]
+  int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +34,41 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+          child: BottomNavigationBar(
+            backgroundColor: kwhite,
+            selectedItemColor: Colors.blueAccent,
+            unselectedItemColor: Colors.grey,
+            items: [
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.home_rounded, size: 30),
+                label: 'Home',
+              ),
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.person_rounded, size: 30),
+                label: 'Person',
+              )
+            ],
+            onTap: (index) {
+              setState(() {
+                activeIndex = index;
+              });
+            },
+          ),
+        ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {},
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      backgroundColor: kdark,
+      child: Icon(Icons.add, color: klightgrey, size: 35),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
