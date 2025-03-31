@@ -20,8 +20,8 @@ class _GoPremiumState extends State<GoPremium> {
             borderRadius: BorderRadius.circular(he * 0.02),
             gradient: const LinearGradient(
               colors: [
-                Color(0xfffdc830),
-                Color(0xfff37335),
+                Color.fromARGB(247, 7, 0, 4),
+                Color.fromARGB(255, 14, 55, 65),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -46,7 +46,7 @@ class _GoPremiumState extends State<GoPremium> {
                     colorFilter: ColorFilter.mode(
                       Color.fromARGB(255, 204, 198, 198).withOpacity(0.6),
                       BlendMode.srcATop),
-                    child: const Icon(Icons.workspace_premium_outlined, size: 30, color: MyThemeColor.textColor,),
+                    child: Icon(Icons.workspace_premium_outlined, size: 30, color: MyThemeColor.textColor,),
                     ),
                 ),
                 SizedBox(width: he * 0.015),
@@ -77,7 +77,7 @@ class _GoPremiumState extends State<GoPremium> {
                 ),
                 Expanded(child: Container()),
                 IconButton(
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_forward_ios,
                     size: 30,
                     color: Colors.grey,

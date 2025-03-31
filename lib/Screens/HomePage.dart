@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:forgetnot/widgets/Constant.dart';
+import 'package:forgetnot/widgets/constant.dart';
 import 'package:forgetnot/widgets/premium.dart';
+import 'package:forgetnot/widgets/tasks.dart';
 
 import 'ProfilePage.dart';
 
@@ -117,23 +118,30 @@ AppBar _buildAppBar() {
   );
 }
 
-class Homepage extends StatefulWidget {
+class Homepage extends StatelessWidget {
   const Homepage({super.key});
 
   @override
-  State<Homepage> createState() => _HomepageState();
-}
-
-class _HomepageState extends State<Homepage> {
-  @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(right: 8.0, left: 8, top: 20),
+          padding: EdgeInsets.only(right: 8.0, left: 8, top: 20, bottom: 10),
           child: GoPremium(),
         ),
+        Container(
+          padding: EdgeInsets.all(15),
+          child: Text(
+            'Tasks',
+            style: TextStyle(
+              fontSize: 26,
+              color: Colors.grey.shade600,
+              fontWeight: FontWeight.w500
+            ),
+          ),
+        ),
+        Expanded(child: Tasks())
       ],
     );
   }
