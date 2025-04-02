@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:forgetnot/Screens/HomePage.dart';
+import 'package:forgetnot/Screens/setting.dart';
 
 class menuPage extends StatefulWidget {
   const menuPage({super.key});
@@ -40,15 +41,22 @@ class _menuPageState extends State<menuPage> {
               ],
             ),
             ),
-            SizedBox(height: he * 0.13,),
+            SizedBox(height: he * 0.03,),
             const Text('Contact Us', style: TextStyle(fontSize: 30)),
             SizedBox(height: he * 0.03),
             const Text('About Us', style: TextStyle(fontSize: 30)),
-            SizedBox(height: he * 0.13),
+            SizedBox(height: he * 0.03),
             const Text('Help', style: TextStyle(fontSize: 30)),
             SizedBox(height: he * 0.03),
-            const Text('Settings', style: TextStyle(fontSize: 30)),
-            SizedBox(height: he * 0.13,),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => settingPage()));
+              },
+              child: Text('Setting', style: TextStyle(fontSize: 30
+              ),
+              ),
+              ),
+            SizedBox(height: he * 0.03,),
             GestureDetector(
               onTap: () => SystemNavigator.pop(),
               child: const Text('Log out', style: TextStyle(fontSize: 30))),
