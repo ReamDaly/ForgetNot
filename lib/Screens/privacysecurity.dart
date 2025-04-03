@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forgetnot/Screens/password.dart';
 import 'package:forgetnot/components/upper_header.dart';
 import 'package:forgetnot/Screens/setting.dart';
 
@@ -27,9 +28,14 @@ class _PrivacySecurityState extends State<PrivacySecurity> {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color:  Colors.grey.shade600),
               ),
               SizedBox(height: he * 0.01),
-              CustomOption("Password", Icons.lock, () {}, () {}),
-              CustomOption("My Account", Icons.account_circle, () {}, () {}),
-              CustomOption("My Data", Icons.save_alt, () {}, () {}),
+              CustomOption("Password", Icons.lock, () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChangePassword()),
+                );
+              }),
+              CustomOption("My Account", Icons.account_circle, () {}),
+              CustomOption("My Data", Icons.save_alt, () {}),
             ],
           ),
         ),
@@ -38,7 +44,7 @@ class _PrivacySecurityState extends State<PrivacySecurity> {
   }
 }
 
-Widget CustomOption(String text, IconData icon, Function(), onTap) {
+Widget CustomOption(String text, IconData icon, onTap) {
   return GestureDetector(
     onTap: onTap,
     child: Padding(

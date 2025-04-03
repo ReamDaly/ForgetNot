@@ -25,7 +25,69 @@ class _ChangePasswordState extends State<ChangePassword> {
             style: TextStyle(fontSize: 16, color: Colors.grey[600], fontWeight: FontWeight.bold),
             ),
             SizedBox(height: he * 0.01),
-            TextFormField
+            TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(
+                fillColor: Colors.grey[600],
+                labelText: "Current Password",
+                labelStyle: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade600),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade600),
+                )
+              ),
+            ),
+            SizedBox(height: he * 0.01),
+            TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(
+                fillColor: Colors.transparent,
+                labelText: 'New Password',
+                labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade600),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade600),
+                )
+              ),
+            ),
+            TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(
+                fillColor: Colors.transparent,
+                labelText: 'Confirm Password',
+                labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade600),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade600),
+                )
+              ),
+            ),
+            SizedBox(height: he * 0.06),
+            Container(
+              width: double.infinity,
+              height: he * 0.07,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  )
+                ),
+                child: Text('Change Password', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold
+                ),
+              ),
+            ),
+            ),
           ]
         )
         ),
