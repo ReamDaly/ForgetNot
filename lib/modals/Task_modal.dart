@@ -8,10 +8,11 @@ class Task {
   Color? iconcolor;
   Color? btncolor;
   num? left;
+  List<Map<String, dynamic>>? desc;
   num? done;
   bool isLast;
 
-  Task({this.icon, this.title, this.bgcolor, this.iconcolor, this.btncolor, this.left, this.done, this.isLast = false});
+  Task({this.icon, this.title, this.bgcolor, this.iconcolor, this.btncolor, this.left, this.desc, this.done, this.isLast = false});
   static List<Task> generateTasks(){
     return [
       Task(
@@ -21,6 +22,35 @@ class Task {
         iconcolor: kBlueDark,
         btncolor: kBlue,
         left: 5,
+        desc: [{
+          'Time': '10:00 AM',
+          'Task': 'Meeting with John',
+          'Slot': '10:00 AM - 11:00 AM',
+          'tlColor': kRedDark,
+          'bgColor': kRedLight,
+        },
+        {
+          'Time': '10:00 AM',
+          'Task': 'Meeting with Manyta',
+          'Slot': '10:00 AM - 11:00 AM',
+          'tlColor': kRedDark,
+          'bgColor': kRedLight,
+        },
+        {
+          'Time': '11:00 AM',
+          'Task': 'Meeting with July',
+          'Slot': '11:00 AM - 12:00 PM',
+          'tlColor': kRedDark,
+          'bgColor': kRedLight,
+        },
+        {
+          'Time': '12:00 PM',
+          'Task': 'Meeting with JDaly',
+          'Slot': '12:00 PM - 1:00 PM',
+          'tlColor': Colors.grey.withOpacity(0.3),
+          'bgColor': kYellowLight,
+        }
+        ],
         done: 3,
         isLast: false
       ),
@@ -31,6 +61,15 @@ class Task {
         iconcolor: kYellowDark,
         btncolor: kYellow,
         left: 1,
+        desc: [
+          {
+          'Time': '11:00 AM',
+          'Task': 'Meeting with July',
+          'Slot': '11:00 AM - 12:00 PM',
+          'tlColor': kRedDark,
+          'bgColor': kRedLight,
+        },
+        ],
         done: 4,
         isLast: false
       ),

@@ -2,6 +2,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:forgetnot/modals/Task_modal.dart';
 import 'package:forgetnot/widgets/constant.dart';
+import 'package:forgetnot/widgets/detail.dart';
 
 class Tasks extends StatelessWidget {
   final taskList = Task.generateTasks();
@@ -42,42 +43,47 @@ Widget _buildAddTask() {
 }
 
 Widget _buildTask(BuildContext context, Task taskList) {
-  return Container(
-    padding: EdgeInsets.all(15),
-    decoration: BoxDecoration(
-      color: taskList.bgcolor,
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Icon(taskList.icon, color: taskList.iconcolor, size: 30),
-        SizedBox(height: 30),
-        Text(
-          taskList.title.toString(),
-          style: TextStyle(
-            color: Colors.grey[600],
-            fontSize: 18,
-            fontWeight: FontWeight.w500,
+  return GestureDetector(
+    onTap: () {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(taskList)));
+    },
+    child: Container(
+      padding: EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        color: taskList.bgcolor,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(taskList.icon, color: taskList.iconcolor, size: 30),
+          SizedBox(height: 30),
+          Text(
+            taskList.title.toString(),
+            style: TextStyle(
+              color: Colors.grey[600],
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
           ),
-        ),
-        SizedBox(height: 20),
-        Row(
-          children: [
-            _buildTaskStatus(
-              Colors.white54,
-              taskList.iconcolor!,
-              '${taskList.left} left',
-            ),
-            const SizedBox(width: 5),
-            _buildTaskStatus(
-              kwhite,
-              taskList.iconcolor!,
-              '${taskList.done} done',
-            ),
-          ],
-        ),
-      ],
+          SizedBox(height: 20),
+          Row(
+            children: [
+              _buildTaskStatus(
+                Colors.white54,
+                taskList.iconcolor!,
+                '${taskList.left} left',
+              ),
+              const SizedBox(width: 5),
+              _buildTaskStatus(
+                kwhite,
+                taskList.iconcolor!,
+                '${taskList.done} done',
+              ),
+            ],
+          ),
+        ],
+      ),
     ),
   );
 }
