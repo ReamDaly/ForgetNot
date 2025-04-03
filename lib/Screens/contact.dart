@@ -12,29 +12,84 @@ class ContactUs extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Padding(padding: EdgeInsets.only(left: he * 0.03, right: he * 0.03),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          upperHeader("Contact Us", context, false, page: const menuPage()),
-          SizedBox(height: he * 0.042),
-          Text(
-            "Contact Us",
-            style: TextStyle(fontSize: 20, color: Colors.grey.shade600, fontWeight: FontWeight.bold),
+          upperHeader("Contact Us", context, true, page: const menuPage()),
+          SizedBox(height: he * 0.02),
+          Container(
+            height: he * 0.27,
+            width: he * 0.35,
+            child: Image.asset('assets/Contact.webp'),
           ),
-          SizedBox(height: he * 0.01),
           Text(
-            "Email",
+            'We are here to help you',
+            textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 20,
+              color: Colors.grey.shade600,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Colors.grey.shade600
             ),
           ),
-          SizedBox(height: he * 0.01,)
-
-
+          SizedBox(height: he * 0.008),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10)
+            ),
+            width: double.infinity,
+            child: Padding(padding: EdgeInsets.only(left: he * 0.03, right: he * 0.03
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Name',
+                    hintText: 'Enter your name',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 15),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    hintText: 'Enter your Email',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 15),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    labelText: 'Message',
+                    hintText: 'Enter your message',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 25),
+                Container(
+                  width: double.infinity,
+                  child: ElevatedButton(onPressed: () {}, child: const Text('Send', style: TextStyle(color: Colors.white),),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey.shade900,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  ),
+                ),
+        ])),
+          ),
         ],
-      ),
-      ),
+      )),
     ));
   }
 }
+        
+                    

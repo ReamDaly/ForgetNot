@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:forgetnot/Screens/HomePage.dart';
+import 'package:forgetnot/Screens/contact.dart';
 import 'package:forgetnot/Screens/helppage.dart';
 import 'package:forgetnot/Screens/setting.dart';
 
@@ -43,9 +44,11 @@ class _menuPageState extends State<menuPage> {
             ),
             ),
             SizedBox(height: he * 0.03,),
-            const Text('Contact Us', style: TextStyle(fontSize: 30)),
-            SizedBox(height: he * 0.03),
-            const Text('About Us', style: TextStyle(fontSize: 30)),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (content) => ContactUs()));
+              },
+              child: Text('Contact Us', style: TextStyle(fontSize: 30))),
             SizedBox(height: he * 0.03),
             GestureDetector(
               onTap: () {
