@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:forgetnot/Screens/HomePage.dart';
+import 'package:forgetnot/Screens/helppage.dart';
 import 'package:forgetnot/Screens/setting.dart';
 
 class menuPage extends StatefulWidget {
@@ -46,7 +47,11 @@ class _menuPageState extends State<menuPage> {
             SizedBox(height: he * 0.03),
             const Text('About Us', style: TextStyle(fontSize: 30)),
             SizedBox(height: he * 0.03),
-            const Text('Help', style: TextStyle(fontSize: 30)),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HelpPage()));
+              },
+              child: Text('Help', style: TextStyle(fontSize: 30))),
             SizedBox(height: he * 0.03),
             GestureDetector(
               onTap: () {
