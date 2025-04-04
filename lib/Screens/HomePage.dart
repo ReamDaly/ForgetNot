@@ -93,12 +93,12 @@ AppBar _buildAppBar(BuildContext context) {
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: Image.asset('assets/Also_Karina.png', fit: BoxFit.cover,),
+            child: Image.asset('assets/Karina.jpeg', fit: BoxFit.cover,),
           ),
         ),
         SizedBox(width: 10,),
         Text(
-          ' Hello Manyta',
+          ' Hello Karina',
           style: TextStyle(
             fontSize: 22,
             color: Colors.grey.shade600,

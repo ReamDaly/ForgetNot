@@ -69,7 +69,7 @@ class _GoPremiumState extends State<GoPremium> {
                       'Get access to all features and unlimited downloads',
                       style: TextStyle(
                         color: Colors.grey[800],
-                        fontSize: 16,
+                        fontSize: 12,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
