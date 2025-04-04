@@ -24,9 +24,9 @@ class TaskTimeLine extends StatelessWidget {
               ),
               (detail['Task'] ?? '').toString().isNotEmpty
               ? _buildCard(
-                detail['bgColor'] ?? Colors.white, detail['Title'] ?? '', detail['Slot'] ?? ''
+                detail['bgColor'] ?? Colors.white, detail['Task'] ?? '', detail['Slot'] ?? ''
               )
-              : _buildCard(Colors.black, '', '' ),
+              : _buildCard(Colors.white, '', '' ),
             ],
           ))
         ],
@@ -34,7 +34,7 @@ class TaskTimeLine extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(Color bgColor, String title, String slot){
+  Widget _buildCard(Color bgColor, String task, String slot){
     return Container(
       width: 250,
       height: 100,
@@ -51,7 +51,7 @@ class TaskTimeLine extends StatelessWidget {
         children: [
           Padding(padding: const EdgeInsets.all(8),
           child: Text(
-            title,
+            task,
             style: TextStyle(fontSize: 18, color: Colors.grey.shade900, fontWeight: FontWeight.w500),
           ),
           ),
