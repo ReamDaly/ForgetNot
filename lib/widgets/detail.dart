@@ -10,7 +10,7 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final detailList = task.desc;
+    final detailList = task.desc ?? [];
     return Scaffold(
       backgroundColor: Colors.black,
       body: CustomScrollView(
@@ -33,7 +33,7 @@ class DetailPage extends StatelessWidget {
               ),
             ),
           ),
-          detailList == null
+          detailList.isEmpty
           ? SliverFillRemaining(
             child: Container(
               color: Colors.white,
@@ -73,7 +73,7 @@ class DetailPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
-              '${task.title}',
+              '${task.title ?? 'No Title'}',
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
@@ -81,7 +81,7 @@ class DetailPage extends StatelessWidget {
             ),
             const SizedBox(height: 5),
             Text(
-              'You have ${task.left} tasks left to do',
+              'You have ${task.left ?? 0} tasks left to do',
               style: const TextStyle(
                 fontSize: 12,
                 color: Colors.grey,

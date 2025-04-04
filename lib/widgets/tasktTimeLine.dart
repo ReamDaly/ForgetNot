@@ -19,14 +19,14 @@ class TaskTimeLine extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                detail['time'],
+                detail['Time'] ?? '',
                 style: TextStyle(color: Colors.grey, fontSize: 15),
               ),
-              detail['title'].isNotEmpty
+              (detail['Task'] ?? '').toString().isNotEmpty
               ? _buildCard(
-                detail['bgColor'], detail['title'], detail['slot']
+                detail['bgColor'] ?? Colors.white, detail['Title'] ?? '', detail['Slot'] ?? ''
               )
-              : _buildCard(Colors.white, '', '' ),
+              : _buildCard(Colors.black, '', '' ),
             ],
           ))
         ],
